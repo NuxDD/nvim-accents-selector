@@ -38,9 +38,27 @@ local function get_accented_list(char)
 	return nil
 end
 
+--- Return the index at which value in found in array, otherwise return nil
+-- @param value Value to search
+-- @param array Array in which value is searched
+-- @return The index of value in array if it is found, otherwise return nil
+local function get_index(array, value)
+	for i, v in ipairs(array) do 
+		if v == value then
+			return i
+		end
+	end
+	return nil
+end
+
 local function main()
 	local mode = vim.api.nvim_get_mode().mode
 end
 
+local function cycle()
+end
+
 -- Create the :Accent user-defined command
 vim.api.nvim_create_user_command('Accent', main, {})
+-- Create the :AccentCycle user-defined command
+vim.api.nvim_create_user_command('AccentCycle', cycle, {})

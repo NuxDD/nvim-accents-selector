@@ -61,6 +61,8 @@ local function main()
 	local mode = vim.api.nvim_get_mode().mode
 end
 
+--- Cycle through the list of accented char which correspond to the char under the cursor, and replace it with the next one on the list
+-- @return None
 local function cycle()
 	local char_cursor = get_char_cursor()
 	local accented_list = get_accented_list(char_cursor)
